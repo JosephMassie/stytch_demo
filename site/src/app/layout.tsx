@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import './globals.css';
-import Image from 'next/image';
 import { loadEnvConfig } from '@next/env';
+import localFont from 'next/font/local';
+import Image from 'next/image';
+
+import './globals.css';
 import StytchProvider from '../components/stytch_provider';
 
 const notoSans = localFont({
-    src: './fonts/NotoSans-Regular.ttf',
+    src: '../../public/NotoSans-Regular.ttf',
     variable: '--font-noto-sans',
     weight: '100 900',
 });

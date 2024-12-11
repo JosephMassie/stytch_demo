@@ -1,24 +1,35 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import { useStytchUser } from '@stytch/nextjs';
+
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { useStytchMemberSession } from '@stytch/nextjs/b2b';
 
 export default function Home() {
-    const { user, isInitialized } = useStytchUser();
+    const { session, isInitialized } = useStytchMemberSession();
     const router = useRouter();
 
     useEffect(() => {
-        if (isInitialized && user) {
+        if (isInitialized && session) {
             router.replace('/dashboard');
-        } else {
-            router.replace('/login');
         }
-    }, [router, user, isInitialized]);
+    }, [router, session, isInitialized]);
 
     return (
-        <main className="w-full min-h-full flex flex-col gap-8 row-start-2 items-center">
-            <div className="min-h-full flex flex-row gap-8">Homepage</div>
+        <main className="w-full min-h-full flex flex-col row-start-2 items-center">
+            <Image
+                className="mx-auto mt-0 mb-4"
+                src="/datadog_logo.svg"
+                alt="Datadog logo"
+                width={140}
+                height={140}
+            />
+            <Link className="mt-4 py-2 px-8 bg-blue-500 rounded" href="/login">
+                Login
+            </Link>
         </main>
     );
 }
