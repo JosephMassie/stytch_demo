@@ -28,7 +28,7 @@ export default function RootLayout({
         <StytchProvider>
             <html lang="en">
                 <body className={`${notoSans.variable} antialiased`}>
-                    <div className="bg-black -z-10 w-full h-full fixed left-0 top-0">
+                    <div className="bg-black -z-10 w-screen h-screen fixed left-0 top-0">
                         <div className="absolute overflow-hidden inset-0">
                             <Image
                                 className="block absolute -inset-6 max-w-none min-w-[105%]"
@@ -39,7 +39,7 @@ export default function RootLayout({
                             />
                         </div>
                     </div>
-                    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+                    <div className="min-h-screen grid items-center justify-items-center font-[family-name:var(--font-noto-sans)]">
                         {children}
                     </div>
                 </body>

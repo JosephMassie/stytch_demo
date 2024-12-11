@@ -25,3 +25,7 @@ export const Baseline = {
         placeholderColor: '#64748b',
     },
 };
+
+export const AdminPortalDefaults = {
+    container: { width: '100%', borderRadius: 'none' },
+};

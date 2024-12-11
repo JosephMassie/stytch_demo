@@ -6,8 +6,8 @@ export default function LoginLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <main className="w-full min-h-full flex flex-col gap-8 row-start-2 items-center">
-            <div className="min-h-full flex flex-row gap-8">
+        <main className="w-full min-h-full flex flex-col gap-8 items-center">
+            <div className="min-h-full flex flex-col sm:flex-row gap-8">
                 <Image
                     className="m-auto mt-0"
                     src="/datadog_logo.svg"
